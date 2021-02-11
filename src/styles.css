@@ -4,6 +4,7 @@ body {
   /* background-color: rgb(24, 22, 22); */
   background: url("https://wallscloud.net/uploads/cache/3001594571/sklon_relef_tuman_168990_3840x2160-1024x576-MM-90.jpg")
     no-repeat;
+  background-attachment: fixed;
   -moz-background-size: 100%; /* Firefox 3.6+ */
   -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
   -o-background-size: 100%; /* Opera 9.6+ */

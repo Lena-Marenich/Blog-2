@@ -2,3 +2,12 @@
   display: block;
   margin-top: 50px;
 }
+
+mat-expansion-panel {
+  margin: 10px 0;
+}
+
+info-text {
+  color: aliceblue;
+  text-align: center;
+}
