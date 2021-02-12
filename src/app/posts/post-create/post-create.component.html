@@ -1,31 +1,22 @@
 <mat-card>
 
-  <mat-form-field appearance="outline" color="accent">
-        <mat-label>Тема поста</mat-label>
-        <input matInput placeholder="Тема поста" type="text" [(ngModel)]="enteredTitle">
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-  </mat-form-field>
+    <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+        <mat-form-field appearance="outline" color="accent">
+            <mat-label>Тема поста</mat-label>
+            <input matInput placeholder="Тема поста" type="text" #title="ngModel" ngModel name="title" required >
+            <mat-error *ngIf="title.invalid">Заполните тему поста</mat-error>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
 
-  <mat-form-field appearance="outline" color="accent">
-    <mat-label>Текст поста</mat-label>
-    <textarea matInput [(ngModel)]="enteredContent" name="post" rows="10" color="accent" placeholder="Текст поста"></textarea>
-  </mat-form-field>
+        <mat-form-field appearance="outline" color="accent">
+            <mat-label>Текст поста</mat-label>
+            <textarea matInput name="content" rows="10" color="accent" placeholder="Текст поста" ngModel required>
+            </textarea>
+        </mat-form-field>
 
-  <button
-    mat-stroked-button
-    color="accent"
-    (click)="onAddPost()">Сохранить
-  </button>
+        <button mat-stroked-button color="accent" type="submit">Сохранить
+        </button>
+
+    </form>
 
 </mat-card>
-
-
-
-
-
-
-
-
-
-
-
