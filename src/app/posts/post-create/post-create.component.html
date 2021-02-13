@@ -10,8 +10,9 @@
 
         <mat-form-field appearance="outline" color="accent">
             <mat-label>Текст поста</mat-label>
-            <textarea matInput name="content" rows="10" color="accent" placeholder="Текст поста" ngModel required>
+            <textarea matInput placeholder="Текст поста" type="text" rows="10" color="accent" #content="ngModel" ngModel name="content" required>
             </textarea>
+            <mat-error *ngIf="content.invalid">Заполните текст поста</mat-error>
         </mat-form-field>
 
         <button mat-stroked-button color="accent" type="submit">Сохранить
