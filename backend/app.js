@@ -37,12 +37,15 @@ app.post('/api/posts', (req, res) => {
 
 });
 
-app.use('/api/posts', (req, res ) => {
+app.use('/api/posts', (req, res) => {
 
+  Post.find().then((documents) => {
     res.status(200).json({
-        message: 'Posts fetched successfully.',
-        posts: posts,
-    })
+      message: 'Posts fetched successfully.',
+      posts: documents
+    });
+  });
+
 
 });
 
