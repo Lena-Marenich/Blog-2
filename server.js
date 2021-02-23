@@ -48,6 +48,7 @@ app.set("port", port);
 
 const server = http.createServer(app);
 server.on("listening", onListening);
+server.on("error", onError);
 server.listen(port, () => {
     console.log('Приложение запущено в режиме ' + '"' + app.get('env') + '"' +
         ' на http://localhost:' + app.get('port') +

@@ -37,7 +37,7 @@ app.post('/api/posts', (req, res) => {
 
 });
 
-app.use('/api/posts', (req, res) => {
+app.get('/api/posts', (req, res) => {
 
   Post.find().then((documents) => {
     res.status(200).json({
