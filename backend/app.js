@@ -24,16 +24,20 @@ app.use(bodyParser.urlencoded( { extended: false } ));
 
 app.post('/api/posts', (req, res) => {
 
-  let post = new Post({
-    title: req.body.title,
-    content: req.body.content,
-  });
+    let post = new Post({
+        title: req.body.title,
+        content: req.body.content
+    });
 
-  post.save();
+    post.save().then(createdPost => {
+        res.status(201).json({
+            message: "Post with id " + post._id + " added successfully.",
+            postId: createdPost._id
+        });
+        // console.log(createdPost._id);
 
-  res.status(201).json({
-    message: "Post with id " + post._id + " added successfully.",
-  });
+    });
+
 
 });
 
